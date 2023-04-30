@@ -14,7 +14,7 @@
                 <label>Password</label>
                 <input type="password" class="form-control form-control-lg" />
             </div>
-            <button type="submit" class="btn btn-dark btn-lg btn-block">Sign Up</button>
+            <button type="submit" class="btn btn-dark btn-lg btn-block mt-5">Sign Up</button>
             <p class="forgot-password text-right">
                 Already registered 
                 <router-link :to="{name: 'login'}">sign in?</router-link>
@@ -22,10 +22,8 @@
         </form>
     </div>
 </template>
+
 <script>
-    export default {
-        data() {
-            return {}
-        }
-    }
+export default {
+}
 </script>

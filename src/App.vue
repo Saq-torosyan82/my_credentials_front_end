@@ -1,36 +1,32 @@
 <template>
   <div class="vue-tempalte">
     <!-- Navigation -->
-    <nav
-      class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row fixed-top"
-    >
-      <div class="container">
-        <a
-          class="navbar-brand float-left"
-          target="_blank"
-        >
-          My Credentials
-        </a>
-        <ul class="nav navbar-nav flex-row float-right">
-          <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/login">Sign in</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="btn btn-outline-primary" to="/"
-              >Sign up</router-link
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <NavBar :is-auth="isAuth" />
 
     <!-- Main -->
     <div class="App">
       <div class="vertical-center">
-        <div class="inner-block">
-          <router-view />
-        </div>
+        <Main :is-auth="isAuth" />
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import NavBar from "@/components/NavBar";
+import Main from "@/components/Main";
+
+export default {
+  name: "App",
+  components: {
+    NavBar,
+    Main
+  },
+  props: {
+    isAuth: {
+      type: Boolean,
+      default: true,
+    }
+  }
+}
+</script>

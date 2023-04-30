@@ -10,14 +10,12 @@
                 <label>Password</label>
                 <input type="password" class="form-control form-control-lg" />
             </div>
-            <button type="submit" class="btn btn-dark btn-lg btn-block">Sign In</button>
+            <button type="submit" class="btn btn-dark btn-lg btn-block mt-5">Sign In</button>
         </form>
     </div>
 </template>
+
 <script>
-    export default {
-        data() {
-            return {}
-        }
-    }
+export default {
+}
 </script>
