@@ -1,26 +1,24 @@
 <template>
-  <div class="vue-tempalte">
-    <!-- Navigation -->
-    <NavBar />
-
-    <!-- Main -->
-    <div class="App">
-      <div class="vertical-center">
-        <Main />
-      </div>
-    </div>
+  <div v-if="$store.state.auth.email">
+      <HeaderNav />
+      <Dashboard />
+  </div>
+  <div v-else>
+      <Login />
   </div>
 </template>
 
 <script>
-import NavBar from "@/components/NavBar";
-import Main from "@/components/Main";
+import HeaderNav from "@/components/HeaderNav";
+import Dashboard from "@/components/Dashboard";
+import Login from "@/components/Login";
 
 export default {
   name: "App",
   components: {
-    NavBar,
-    Main
+    HeaderNav,
+    Dashboard,
+    Login
   },
   props: {
   },
