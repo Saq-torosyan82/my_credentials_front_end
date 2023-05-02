@@ -9,27 +9,29 @@ const routes = [
   {
     path: '/dashboard',
     name: 'dashboard',
-    component: () => import('@/components/Dashboard.vue')
+    component: () => import('@/components/Dashboard.vue'),
+    children: [
+      {
+        path: 'sites',
+        name: 'sites',
+        component: () => import('@/components/Sites.vue')
+      },
+      {
+        path: 'applications',
+        name: 'applications',
+        component: () => import('@/components/Applications.vue')
+      },
+      {
+        path: 'apis',
+        name: 'apis',
+        component: () => import('@/components/Apis.vue')
+      },
+    ],
   },
   {
     path: '/login',
     name: 'login',
     component: () => import('@/components/Login.vue')
-  },
-  {
-    path: '/dashboard/sites',
-    name: 'sites',
-    component: () => import('@/components/Sites.vue')
-  },
-  {
-    path: '/dashboard/applications',
-    name: 'applications',
-    component: () => import('@/components/Applications.vue')
-  },
-  {
-    path: '/dashboard/apis',
-    name: 'apis',
-    component: () => import('@/components/Apis.vue')
   }
 ]
 

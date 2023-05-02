@@ -1,7 +1,7 @@
 <template>
   <div v-if="$store.state.auth.email">
       <HeaderNav />
-      <Dashboard />
+      <router-view />
   </div>
   <div v-else>
       <Login />
@@ -10,14 +10,12 @@
 
 <script>
 import HeaderNav from "@/components/HeaderNav";
-import Dashboard from "@/components/Dashboard";
 import Login from "@/components/Login";
 
 export default {
   name: "App",
   components: {
     HeaderNav,
-    Dashboard,
     Login
   },
   props: {

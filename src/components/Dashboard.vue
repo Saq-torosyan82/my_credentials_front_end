@@ -41,6 +41,11 @@
 <script>
 export default {
     name: "Dashboard",
+    data() {
+        return {
+            showData: false,
+        }
+    },
     components: {
     },
 }
