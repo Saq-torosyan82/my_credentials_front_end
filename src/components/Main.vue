@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Dashboard v-if="isAuth" />
+        <Dashboard v-if="$store.state.auth.email" />
 
         <div v-else class="inner-block">
           <router-view />

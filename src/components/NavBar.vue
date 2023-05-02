@@ -11,7 +11,7 @@
                     My Credentials
                 </a>
 
-                <AuthNav v-if="isAuth" />
+                <AuthNav v-if="$store.state.auth.email" />
                 <NotAuthNav v-else />
             </div>
         </nav>
@@ -33,7 +33,7 @@ export default {
             type: Boolean,
             default: false,
         }
-    }
+    },
 }
 </script>
 
