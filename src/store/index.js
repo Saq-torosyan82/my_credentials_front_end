@@ -14,4 +14,9 @@ export default createStore({
             }
         }
     },
+    getters: {
+        isAuthenticated(state) {
+            return !!state.auth.email;
+        }
+    }
 })
