@@ -98,7 +98,7 @@ class BaseProxy {
     const clearedUrl = url.replace(/\/$/, '');
     console.log('clearedUrl =', clearedUrl);
     console.log('getParameterString =', this.getParameterString());
-    console.log('this.$axios =', this.$axios);
+    console.log('this.$axiosdefaults.baseURL =', this.$axios.defaults.baseURL);
     return new Promise((resolve, reject) => {
       this.$axios[requestType](clearedUrl + this.getParameterString(), data, options)
         .then((response) => {
