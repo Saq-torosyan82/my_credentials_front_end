@@ -7,16 +7,16 @@ export default createStore({
     },
     mutations: {
         initializeStore(state) {
-            if (localStorage.getItem("email")) {
-                state.auth.email = localStorage.getItem("email");
+            if (localStorage.getItem("my_token")) {
+                state.auth.authenticated = true;
             } else {
-                state.auth.email = "";
+                state.auth.authenticated = false;
             }
         }
     },
     getters: {
         isAuthenticated(state) {
-            return !!state.auth.email;
+            return !!state.auth.authenticated;
         }
     }
 })

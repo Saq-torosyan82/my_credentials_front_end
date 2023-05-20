@@ -1,10 +1,10 @@
 export default {
-    login(state, email) {
-        state.email = email;
-        localStorage.setItem("email", email);
+    login(state, token) {
+        state.authenticated = true;
+        localStorage.setItem("my_token", token);
     },
     logout(state) {
-        state.email = "";
-        localStorage.removeItem("email");
+        state.authenticated = false;
+        localStorage.removeItem("my_token");
     },
 };

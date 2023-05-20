@@ -1,5 +1,5 @@
 <template>
-  <div v-if="$store.state.auth.email">
+  <div v-if="$store.state.auth.authenticated">
       <HeaderNav />
       <router-view />
   </div>
