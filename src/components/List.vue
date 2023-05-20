@@ -1,5 +1,4 @@
 <template>
-  <ListHeading title="sites" />
     <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -130,12 +129,11 @@
 </template>
 
 <script>
-import ListHeading from "@/components/elements/ListHeading.vue";
+import HeaderNav from "@/components/HeaderNav";
 
 export default {
   name: "Sites",
   components: {
-    ListHeading
   },
 }
 </script>

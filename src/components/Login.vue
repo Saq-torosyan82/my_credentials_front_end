@@ -36,7 +36,6 @@ export default {
     },
     methods: {
         login() {
-            console.log('store = ', this.$store);
             this.$store.dispatch('login', {email: this.email, password: this.password});
         }
     }

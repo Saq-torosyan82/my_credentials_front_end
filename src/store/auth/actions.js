@@ -6,11 +6,8 @@ export const login = ({ commit }, payload) => new Promise((resolve, reject) => {
     (new AuthProxy())
       .login(payload)
       .then((response) => {
-        console.log("response =", response)
-        console.log("router =", router)
         commit('login', response.token);
         router.push('/dashboard');
-
         resolve();
       })
       .catch((e) => {
@@ -18,6 +15,17 @@ export const login = ({ commit }, payload) => new Promise((resolve, reject) => {
       });
   });
 
+  export const logout = ({ commit }) => {
+    (new AuthProxy())
+      .logout()
+      .finally(() => {
+        localStorage.removeItem('pathToLoadAfterLogin');
+        commit('logout');
+        router.push('/');
+      });
+  };
+
 export default {
     login,
+    logout,
 };
